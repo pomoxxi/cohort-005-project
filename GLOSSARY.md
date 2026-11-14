@@ -1,87 +1,94 @@
 # Cadence
 
-Cadence is a course platform where learners buy courses and watch their lessons. This glossary fixes the words for a learner getting their money back.
+Cadence sells video courses to students. This glossary covers the language around buying, taking and refunding courses.
 
 ## Language
 
 ### People
 
+**Student**:
+Someone who takes courses on Cadence.
+_Avoid_: Learner, User
+
+**Instructor**:
+A person who builds and owns courses, and sees the Students enrolled on them.
+_Avoid_: Teacher, Author, Creator
+
 **Platform Admin**:
-A Cadence staff member (`UserRole.Admin`). Only Platform Admins decide Refund Requests. A course's instructor doesn't.
-_Avoid_: Admin (on its own), team member, the team, reviewer, support
+A member of Cadence staff who runs the platform. Only a Platform Admin decides Refund Requests.
+_Avoid_: Admin (on its own), the team, Staff
 
 **Team Admin**:
-The customer who manages a Team and buys its Team Licences (`TeamMemberRole.Admin`). A Team Admin has no say over Refund Requests other than their own.
+A Student who buys and manages a Team Licence. A Team Admin has no say over Refund Requests.
 _Avoid_: Admin (on its own)
 
-**Team**:
-A customer group whose Team Admin buys Seats in a course for its members. It never means Cadence staff.
+### Enrollment
+
+**Enrollment**:
+A Student's place on a course, which lets them take it. A Student has at most one Enrollment per course, whether it came from an Individual Purchase or a Claimed Seat.
+_Avoid_: Place on a course, Access
+
+**Lapsed**:
+A Student who has lost their Enrollment on a course but still has progress on it.
+
+**Watched**:
+Seconds of video a Student has actually played in a course: the furthest point reached in each lesson, added up. Not lessons opened.
+_Avoid_: Viewed, Progress
 
 ### Purchases
 
+**Purchase**:
+A single payment for a course. It is either an Individual Purchase or a Team Licence.
+_Avoid_: Order, Transaction
+
 **Individual Purchase**:
-A Purchase someone makes for themselves. It gives the buyer a place on the course. A learner has at most one place per course, from either an Individual Purchase or a Claimed Seat, never both.
+A Purchase a Student makes for themselves. It gives the buyer an Enrollment.
 
 **Team Licence**:
-A Purchase a Team Admin makes for others. It gives Seats, not a place on the course for the buyer.
-_Avoid_: Team purchase, bulk purchase
+A Purchase a Team Admin makes for others. It grants Seats, not an Enrollment; the buyer can't take the course through it.
+_Avoid_: Team purchase, Bulk purchase
 
 **Seat**:
-One place on a course that a Team Licence holds for a Team member. An **Unclaimed Seat** hasn't been used yet. A **Claimed Seat** has been used by a learner, which gives them a place on the course.
-_Avoid_: Coupon (the code's name for it, which wrongly suggests a discount), code, voucher
+One place on a Team Licence that a Student can claim to get an Enrollment.
+_Avoid_: Coupon, Code, Voucher
 
-### Refund Requests
+**Unclaimed Seat**:
+A Seat no Student has claimed yet.
 
-**Refund Request**:
-A buyer asking for their money back on one specific Purchase they choose: an Individual Purchase from the course page, or a Team Licence from the team page. Only the buyer of a Purchase can raise one; a learner who claimed a Seat can't. A Platform Admin decides it. A buyer can open a new one after a decline.
-While a Team Licence has an Open Refund Request, its Unclaimed Seats can't be claimed. A Team Licence with any Claimed Seat can't be refunded.
-_Avoid_: Cancellation, cancel my purchase, reversal, chargeback, dispute
-
-**Open**:
-A Refund Request that no Platform Admin has decided yet, or whose decision was Reopened.
-_Avoid_: Requested, pending
-
-**Reopen**:
-A Platform Admin sending an Approved or Declined Refund Request back to Open, with a note saying why. It undoes everything the decision did. An Approved request can't be reopened once its Refund is Issued.
-_Avoid_: Undo, revert, reverse
-
-**Decline Note**:
-The Platform Admin's explanation to the learner of why their Refund Request was Declined. The learner sees it by email and in their settings.
-
-**Approved**:
-A Refund Request that a Platform Admin accepted. It leads to a Refund. The learner loses access to the course at that moment, not when the money arrives. For a Team Licence, its Unclaimed Seats can never be claimed.
-
-**Declined**:
-A Refund Request that a Platform Admin turned down. It leads to no Refund. It always carries a Decline Note.
-_Avoid_: Rejected, denied
+**Claimed Seat**:
+A Seat a Student has claimed. It belongs to that Student, so a Team Licence with any Claimed Seat can't be refunded.
 
 ### Refunds
 
-**Refund**:
-The money going back to the learner after their Refund Request is Approved. It is always the full amount the learner paid (the purchase's amount paid), never the course's list price. A learner gets at most one Refund per course: they can buy it again afterwards, but they can't ask for a second Refund.
+**Refund Request**:
+The buyer's ask, with their reason, to get back what they paid for one specific Purchase. A Platform Admin approves or declines it. One Purchase can have several Refund Requests over time, but only one can be undecided at once.
+_Avoid_: Refund (for the ask itself), Cancellation, Reversal, Chargeback
 
-The learner's progress (lessons completed, watch history, quiz attempts), comments and ratings are never deleted because of a Refund.
-_Avoid_: Reversal, chargeback, cancellation
+**Open Refund Request**:
+A Refund Request no Platform Admin has decided yet. The buyer keeps their Enrollment while it is open, and a Team Licence's Unclaimed Seats can't be claimed.
+_Avoid_: Pending, Requested, Awaiting review
+
+**Approved Refund Request**:
+A Refund Request a Platform Admin has accepted. Approving it ends what the Purchase granted (the buyer's Enrollment for an Individual Purchase; its Unclaimed Seats, which can then never be claimed, for a Team Licence) and leads to a Refund.
+
+**Declined Refund Request**:
+A Refund Request a Platform Admin has turned down. Nothing the Purchase granted is lost, it has no Refund, and the buyer may raise a new Refund Request.
+
+**Refund**:
+The money returned to the buyer after their Refund Request is approved. It is always the full amount they paid. A declined Refund Request has no Refund.
+_Avoid_: Reversal, Chargeback, Cancellation
 
 **Pending Refund**:
-A Refund that has been approved but not yet confirmed as sent. A Platform Admin sends the money outside Cadence, then marks the Refund Issued or Failed.
+A Refund whose Refund Request has been approved, where the money hasn't been confirmed as sent yet.
+_Avoid_: Pending (for a Refund Request awaiting review)
 
 **Issued Refund**:
-A Refund confirmed as sent back to the learner.
-_Avoid_: Completed, paid out
+A Refund where the money has been confirmed as sent back to the buyer.
+_Avoid_: Completed, Paid out
 
 **Failed Refund**:
-A Refund that couldn't be sent. Its Refund Request stays Approved, because the decision hasn't changed. A Platform Admin tries again with a new Refund Attempt.
+A Refund where the money couldn't be sent. The Refund Request stays approved, because the decision hasn't changed.
 
-**Refund Attempt**:
-One time a Platform Admin tried to send a Refund's money, and what happened: Issued or Failed, who did it, when, and an optional note. Attempts are never edited or deleted. The Refund's current state is its latest Refund Attempt, or Pending if there are none yet.
-_Avoid_: Payout, transaction, retry
-
-### Enrollment after a Refund
-
-**Revoked Enrollment**:
-An enrollment whose Refund Request was Approved. The learner can't open the course, but the enrollment is kept so it can be restored if they buy the course again or claim a Seat for it. Instructor student lists, counts and analytics leave it out.
-_Avoid_: Cancelled, suspended, refunded enrollment, unenrolled
-
-**Retention Period**:
-The 90 days after Approval that a Revoked Enrollment is kept. If the learner buys again or claims a Seat within it, the enrollment is restored with its original dates. After it, the enrollment is deleted. The learner's progress stays either way.
+**Watch Limit**:
+The amount of Watched time on a course past which a Student can no longer get a Refund, because they've had the course.
+_Avoid_: Watch cap, Viewing threshold
